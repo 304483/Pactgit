@@ -1,9 +1,4 @@
-<<<<<<< HEAD
 package com.retail.pos;
-=======
-package com.ust.sdet.api.contracts.oms;
->>>>>>> 3532e0ef3127ff5f253decfae73d7e83e20eae1e
-
 import au.com.dius.pact.provider.junit5.HttpTestTarget;
 import au.com.dius.pact.provider.junit5.PactVerificationContext;
 import au.com.dius.pact.provider.junit5.PactVerificationInvocationContextProvider;
@@ -21,13 +16,9 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.RegisterExtension;
 
 @Provider("oms-provider")
-<<<<<<< HEAD
-@PactFolder("target/pacts")
-=======
 @PactBroker(
         url = "http://127.0.0.1:9292"
 )
->>>>>>> 3532e0ef3127ff5f253decfae73d7e83e20eae1e
 public class OmsProviderVerificationTest {
     @RegisterExtension
     private static final WireMockExtension wireMock =
@@ -57,11 +48,7 @@ public class OmsProviderVerificationTest {
     }
 
 
-<<<<<<< HEAD
-    @State("order 123 exists")
-=======
     @State("Order 245 exists")
->>>>>>> 3532e0ef3127ff5f253decfae73d7e83e20eae1e
     void isOrderExists() {
         wireMock.stubFor(get(urlEqualTo("/order/123"))
                 .willReturn(aResponse()
@@ -72,11 +59,7 @@ public class OmsProviderVerificationTest {
                 """)));
     }
 
-<<<<<<< HEAD
-    @State("inventory available for SKU-9")
-=======
     @State("Creating a new order")
->>>>>>> 3532e0ef3127ff5f253decfae73d7e83e20eae1e
     void createOrder() {
         wireMock.stubFor(post(urlEqualTo("/orders/"))
                 .withHeader("Content-Type", matching("application/json(;.*)?"))
@@ -88,11 +71,7 @@ public class OmsProviderVerificationTest {
                 """)));
     }
 
-<<<<<<< HEAD
-    @State("SKU-9 has stock")
-=======
     @State("SKU-9 has Stock")
->>>>>>> 3532e0ef3127ff5f253decfae73d7e83e20eae1e
     void getInventory() {
         wireMock.stubFor(get(urlEqualTo("/inventory/SKU-9"))
                 .willReturn(aResponse()
